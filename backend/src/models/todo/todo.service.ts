@@ -3,7 +3,7 @@ import { InjectModel } from "@nestjs/mongoose"
 import { Model } from "mongoose"
 import { Nullable } from "shared/types"
 
-import { Todo } from "./todo.schema"
+import { Todo } from "./todo.schema.js"
 
 @Injectable()
 export class TodoService {

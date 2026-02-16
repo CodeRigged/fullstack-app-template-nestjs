@@ -3,9 +3,9 @@ import { MongooseModule } from "@nestjs/mongoose"
 import * as dotenv from "dotenv"
 import { LoggerModule } from "nestjs-pino"
 
-import { HealthModule } from "./base/health.module"
-import { loggerOptions } from "./config/logger"
-import { TodoModule } from "./models/todo/todo.module"
+import { HealthModule } from "./base/health.module.js"
+import { loggerOptions } from "./config/logger.js"
+import { TodoModule } from "./models/todo/todo.module.js"
 
 dotenv.config()
 

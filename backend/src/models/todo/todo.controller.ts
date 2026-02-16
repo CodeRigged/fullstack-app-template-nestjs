@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, NotFoundException, Param, Patch, Post } from "@nestjs/common"
 
-import { Todo } from "./todo.schema"
-import { TodoService } from "./todo.service"
+import { Todo } from "./todo.schema.js"
+import { TodoService } from "./todo.service.js"
 
 /**
  * Controller for handling Todo API endpoints.

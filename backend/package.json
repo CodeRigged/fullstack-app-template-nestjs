@@ -58,5 +58,6 @@
     "start": "nest start",
     "test": "vitest"
   },
+  "type": "module",
   "version": "1.0.0"
 }

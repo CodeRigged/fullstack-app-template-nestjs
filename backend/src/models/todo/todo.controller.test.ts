@@ -3,8 +3,8 @@ import { Test, TestingModule } from "@nestjs/testing"
 import request from "supertest"
 import { afterAll, beforeAll, describe, it, vi } from "vitest"
 
-import { TodoController } from "./todo.controller"
-import { TodoService } from "./todo.service"
+import { TodoController } from "./todo.controller.js"
+import { TodoService } from "./todo.service.js"
 
 describe("TodoController (e2e)", () => {
   let app: INestApplication
