@@ -14,7 +14,7 @@ export class TodoService {
    * @returns {Promise<Todo[]>} Array of todo documents
    */
   async findAll(): Promise<Todo[]> {
-    return this.todoModel.find()
+    return this.todoModel.find().sort({ createdAt: "desc" })
   }
 
   /**
