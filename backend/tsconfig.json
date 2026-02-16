@@ -1,19 +1,22 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "outDir": "dist",
+    "declaration": true,
+    "target": "ES2023",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
     "lib": ["ES2020"],
-    "types": ["vitest/globals", "node"],
-    "noEmit": true,
-    "allowImportingTsExtensions": true,
-    "baseUrl": "./src",
+    "types": ["node"],
+    "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
-      "~/controllers/*": ["./api/controllers/*"],
-      "~/models/*": ["./api/models/*"],
-      "~/routes/*": ["./api/routes/*"],
-      "~/services/*": ["./api/services/*"],
-      "@logger": ["./app.logger.ts"]
+      "shared/types": ["../shared/types/index.ts"]
     }
   },
-  "include": ["src", "setup-vitest.ts", "__tests__", "__mocks__"]
+  "include": ["src/**/*.ts", "setup-vitest.ts", "__tests__", "__mocks__"],
+  "exclude": ["node_modules", "dist"]
 }

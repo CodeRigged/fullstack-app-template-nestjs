@@ -47,8 +47,8 @@ export const useTodoStore = create<TodoStore>((set, get, ...args) => ({
     setIsPending(true, "Fetching todos...")
     try {
       const res = await apiFetch(TODO_API_ENDPOINT)
-      const data = await res.json()
-      set({ todos: data.todos })
+      const todos = await res.json()
+      set({ todos })
     } finally {
       setIsPending(false)
     }
@@ -60,7 +60,7 @@ export const useTodoStore = create<TodoStore>((set, get, ...args) => ({
       await apiFetch(`${TODO_API_ENDPOINT}/${id}`, {
         body: JSON.stringify(updates),
         headers: { "Content-Type": "application/json" },
-        method: "PUT",
+        method: "PATCH",
       })
       await fetchTodos()
     } finally {

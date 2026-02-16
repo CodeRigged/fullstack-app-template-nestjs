@@ -27,7 +27,6 @@
     "lint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0",
     "lint:autofix": "eslint . --ext ts --fix --report-unused-disable-directives --max-warnings 0"
   },
-  "type": "module",
   "types": "build/index.d.ts",
   "version": "1.0.0"
 }
