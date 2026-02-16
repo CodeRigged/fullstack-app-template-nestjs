@@ -1,10 +1,11 @@
-# Express + TypeScript + MongoDB
+# NestJS + TypeScript + MongoDB
 
-This is the backend package of a fullstack monorepo managed with [pnpm workspaces](https://pnpm.io/workspaces). It provides a minimal REST API template using Express, TypeScript, and MongoDB (via Mongoose).
+This is the backend package of a fullstack monorepo managed with [pnpm workspaces](https://pnpm.io/workspaces). It provides a minimal REST API template using NestJS, TypeScript, and MongoDB (via Mongoose).
 
 ## Features
 
-- Simple RESTful API for Todos
+- Built with [NestJS](https://nestjs.com/) for scalable, modular architecture
+- RESTful API for Todos
 - MongoDB integration with [mongoose](https://mongoosejs.com/)
 - TypeScript-first development
 - Shares types and logic with other packages in the monorepo
@@ -22,31 +23,30 @@ This package is intended to be used as part of the monorepo. To install dependen
 
 ```bash
 pnpm install
-pnpm --filter express-ts-template dev
+pnpm --filter nestjs-template dev
 ```
 
 You can also build or start the backend specifically:
 
 ```bash
-pnpm --filter express-ts-template build
-pnpm --filter express-ts-template start
+pnpm --filter nestjs-template build
+pnpm --filter nestjs-template start
 ```
 
 ## Project Structure
 
 - `src/` – Application source code
-  - `api/controllers/` – Express route handlers (controllers)
-  - `api/models/` – Mongoose models
-  - `api/routes/` – Express routers
-  - `api/services/` – Business/data logic
-- `build/` – Compiled JavaScript output
+  - `app.module.ts` – Main NestJS application module
+  - `main.ts` – Application entry point
+  - `models/todo/` – Todo module, controller, service, schema
+  - `base/` – Health check module
 - `package.json` – Project metadata and scripts
 
 ## API Endpoints
 
 - `GET /todos` – List all todos
 - `POST /todos` – Add a new todo (body: `{ text: string }`)
-- `PUT /todos/:id` – Edit a todo's text (body: `{ text: string }`)
+- `PATCH /todos/:id` – Edit a todo's text (body: `{ text: string }`)
 - `DELETE /todos/:id` – Delete a todo by ID
 - `GET /health` – Health check endpoint (returns 200 if DB is connected)
 
@@ -62,7 +62,7 @@ Example todo object:
 
 ## Testing
 
-This backend supports automated testing using [Vitest](https://vitest.dev/) and [Supertest](https://github.com/ladjs/supertest) for HTTP endpoint testing. Example tests can be found in `src/api/controllers/todoController.test.ts`.
+This backend supports automated testing using [Vitest](https://vitest.dev/) and [Supertest](https://www.npmjs.com/package/supertest) for HTTP endpoint testing. Example tests can be found in `src/models/todo/todo.controller.test.ts`.
 
 To run the tests:
 
@@ -72,4 +72,8 @@ pnpm --filter express-ts-template test
 
 Tests cover all main API endpoints and error cases. You can add your own tests in the same style for additional coverage.
 
+---
+
 Happy coding!
+
+> **Note:** This backend was migrated from Express to NestJS. See the commit history for details.

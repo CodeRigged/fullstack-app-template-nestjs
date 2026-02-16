@@ -70,7 +70,7 @@ npm install -g pnpm
 ## Project Structure
 
 - `frontend/` – React TypeScript frontend app
-- `backend/` – Backend service (Express + MongoDB, with controllers/models/routes/services)
+- `backend/` – Backend service (NestJS + MongoDB, modular architecture with controllers/services/schemas)
 - `shared/` – Shared TypeScript code (types, enums, utilities) for both frontend and backend
 
 ## Troubleshooting
