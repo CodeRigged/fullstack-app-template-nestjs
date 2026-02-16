@@ -11,7 +11,6 @@ export default [
     plugins: {
       perfectionist,
     },
-    ignores: ["**/node_modules/**", "**/dist/**", "**/build/**", "**/tsconfig.tsbuildinfo"],
     rules: {
       "perfectionist/sort-imports": [
         "error",

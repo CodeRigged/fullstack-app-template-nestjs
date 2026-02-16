@@ -1,6 +1,7 @@
 version: "3.8"
 services:
   mongo:
+    container_name: mongo-nestjs
     image: mongo:6
     ports:
       - "27017:27017"
@@ -8,6 +9,7 @@ services:
       - mongo-data:/data/db
 
   backend:
+    container_name: backend-nestjs
     build:
       context: .
       dockerfile: backend/Dockerfile
@@ -21,6 +23,7 @@ services:
       - mongo
 
   frontend:
+    container_name: frontend-nestjs
     build:
       context: .
       dockerfile: frontend/Dockerfile
