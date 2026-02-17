@@ -22,7 +22,10 @@
     "react",
     "nestjs",
     "mongoose",
-    "testing"
+    "testing",
+    "eslint",
+    "prettier",
+    "docker"
   ],
   "license": "MIT",
   "main": "index.js",

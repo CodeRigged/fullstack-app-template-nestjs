@@ -71,6 +71,26 @@ npm install -g pnpm
    pnpm clean
    ```
 
+## Running with Docker
+
+You can run the entire stack (MongoDB, backend, and frontend) using Docker Compose. Make sure Docker is installed and running, then use:
+
+```bash
+docker-compose up --build
+```
+
+This will start all services as defined in `docker-compose.yml`:
+
+- MongoDB (port 27017)
+- Backend API (NestJS, port 5000)
+- Frontend (React, port 8080)
+
+To stop and remove containers, run:
+
+```bash
+docker-compose down
+```
+
 ## Project Structure
 
 - `frontend/` – React + TypeScript frontend app
