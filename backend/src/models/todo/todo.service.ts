@@ -49,9 +49,9 @@ export class TodoService {
   /**
    * Delete a todo by its ID.
    * @param {string} id - The ID of the todo to delete
-   * @returns {Promise<void>}
+   * @returns {Promise<Nullable<Todo>>} The deleted todo document, or null if not found
    */
-  async remove(id: string): Promise<void> {
-    await this.todoModel.findByIdAndDelete(id)
+  async remove(id: string): Promise<Nullable<Todo>> {
+    return await this.todoModel.findByIdAndDelete(id)
   }
 }

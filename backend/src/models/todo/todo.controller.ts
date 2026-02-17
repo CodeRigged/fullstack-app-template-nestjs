@@ -69,11 +69,8 @@ export class TodoController {
    */
   @Delete(":id")
   async remove(@Param("id") id: string): Promise<{ deleted: boolean }> {
-    const todo = await this.todoService.findOne(id)
-    if (!todo) {
-      throw new NotFoundException("Todo not found")
-    }
-    await this.todoService.remove(id)
+    const deleted = await this.todoService.remove(id)
+    if (!deleted) throw new NotFoundException("Todo not found")
     return { deleted: true }
   }
 }
