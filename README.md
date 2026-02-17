@@ -8,6 +8,10 @@ This project is a fullstack example using a [pnpm](https://pnpm.io/) workspace. 
 - [pnpm](https://pnpm.io/) (v10.28 or higher recommended)
 - [MongoDB](https://www.mongodb.com/try/download/community) (required for backend; can be run locally or via Docker)
 
+#### Optional
+
+- [Docker](https://www.docker.com/) (required for running the stack with Docker Compose)
+
 To install pnpm globally, run:
 
 ```bash
@@ -69,7 +73,7 @@ npm install -g pnpm
 
 ## Project Structure
 
-- `frontend/` – React TypeScript frontend app
+- `frontend/` – React + TypeScript frontend app
 - `backend/` – Backend service (NestJS + MongoDB, modular architecture with controllers/services/schemas)
 - `shared/` – Shared TypeScript code (types, enums, utilities) for both frontend and backend
 
@@ -77,7 +81,7 @@ npm install -g pnpm
 
 - Make sure you are using the correct Node.js and pnpm versions.
 - If you encounter issues, try running `pnpm install` again.
-- If the backend fails to connect to MongoDB, ensure MongoDB is running locally (default: mongodb://localhost:27017/todos) or update the `MONGO_URI` environment variable.
+- If the backend fails to connect to MongoDB, ensure MongoDB is running locally (default: mongodb://localhost:27017/todos) or update the `MONGO_URI` environment variable in the backend.
 
 ## License
 

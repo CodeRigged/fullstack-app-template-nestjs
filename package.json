@@ -20,7 +20,7 @@
     "pnpm",
     "typescript",
     "react",
-    "express",
+    "nestjs",
     "mongoose",
     "testing"
   ],
