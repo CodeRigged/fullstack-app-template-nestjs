@@ -6,14 +6,15 @@ import { afterAll, beforeAll, describe, it, vi } from "vitest"
 import { TodoController } from "./todo.controller.js"
 import { TodoService } from "./todo.service.js"
 
-describe("TodoController (e2e)", () => {
+describe("TodoController", () => {
   let app: INestApplication
+  const basicTodo = { _id: "1", completed: false, text: "Test" }
   const todoService = {
-    create: vi.fn().mockResolvedValue({ _id: "1", completed: false, text: "Created" }),
-    findAll: vi.fn().mockResolvedValue([{ _id: "1", completed: false, text: "Test" }]),
-    findOne: vi.fn().mockResolvedValue({ _id: "1", completed: false, text: "Test" }),
-    remove: vi.fn().mockResolvedValue(undefined),
-    update: vi.fn().mockResolvedValue({ _id: "1", completed: false, text: "Updated" }),
+    create: vi.fn().mockResolvedValue({ ...basicTodo, text: "Created" }),
+    findAll: vi.fn().mockResolvedValue([basicTodo]),
+    findOne: vi.fn().mockResolvedValue(basicTodo),
+    remove: vi.fn().mockResolvedValue(basicTodo),
+    update: vi.fn().mockResolvedValue({ ...basicTodo, text: "Updated" }),
   }
 
   beforeAll(async () => {
